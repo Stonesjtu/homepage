@@ -1,0 +1,35 @@
+---
+layout: default
+title: Experience
+permalink: /experience/
+---
+
+<main class="subpage" id="top">
+  <section class="page-hero" aria-labelledby="experience-title">
+    <p class="eyebrow">Selected work</p>
+    <h1 id="experience-title">Experience</h1>
+    <p>
+      A resume-style view of my work across AI compiler systems, speech chips,
+      distributed training, GPU inference, and model-parallel training research.
+    </p>
+  </section>
+
+  <section class="section" aria-label="Experience timeline">
+    <div class="timeline">
+      {% for item in site.data.experience %}
+      <article class="experience-card">
+        <div class="experience-meta">
+          <span>{{ item.scope }}</span>
+          <span>{{ item.tags }}</span>
+        </div>
+        <h3>{{ item.title }}</h3>
+        <ul>
+          {% for point in item.points %}
+          <li>{{ point }}</li>
+          {% endfor %}
+        </ul>
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+</main>

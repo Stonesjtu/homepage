@@ -191,11 +191,35 @@ h3 {
 .profile-link {
   min-height: 38px;
   font-size: 0.92rem;
+  margin: 0 8px 8px 0;
 }
 
 .section {
   padding: clamp(64px, 9vw, 118px) clamp(20px, 5vw, 72px);
   border-bottom: 1px solid var(--line);
+}
+
+.subpage {
+  background: var(--bg);
+}
+
+.page-hero {
+  padding: clamp(54px, 9vw, 108px) clamp(20px, 5vw, 72px) clamp(42px, 7vw, 82px);
+  border-bottom: 1px solid var(--line);
+}
+
+.page-hero h1 {
+  max-width: 980px;
+  margin-bottom: 22px;
+  font-size: clamp(3.2rem, 9vw, 7.2rem);
+  line-height: 0.94;
+}
+
+.page-hero p:last-child {
+  max-width: 760px;
+  margin-bottom: 0;
+  color: #2d3732;
+  font-size: clamp(1.05rem, 2vw, 1.26rem);
 }
 
 .section-heading {
@@ -502,6 +526,7 @@ li::marker {
   background: rgba(251, 250, 246, 0.74);
 }
 
+.compact-list h3,
 .compact-list h4 {
   margin: 0 0 8px;
   font-size: 1rem;
@@ -535,6 +560,12 @@ li::marker {
   margin-top: clamp(34px, 6vw, 64px);
   padding-top: clamp(24px, 4vw, 42px);
   border-top: 1px solid var(--line);
+}
+
+.publications.no-top-rule {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: 0;
 }
 
 .publications ol {

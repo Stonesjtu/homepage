@@ -14,8 +14,9 @@ title: Home
         model-parallel DNN training.
       </p>
       <div class="hero-actions" aria-label="Page shortcuts">
-        <a class="button primary" href="#experience">View experience</a>
-        <a class="button secondary" href="#education">Education and publications</a>
+        <a class="button primary" href="#writing">Read blog posts</a>
+        <a class="button secondary" href="{{ '/experience/' | relative_url }}">Experience</a>
+        <a class="button secondary" href="{{ '/background/' | relative_url }}">Background</a>
       </div>
     </div>
     <aside class="profile-panel" aria-label="Profile summary">
@@ -31,14 +32,14 @@ title: Home
 
   <section class="section intro" aria-labelledby="intro-title">
     <div class="section-heading">
-      <p class="eyebrow">Engineering scope</p>
-      <h2 id="intro-title">Work That Moves Metrics</h2>
+      <p class="eyebrow">Brief intro</p>
+      <h2 id="intro-title">Systems Work, Measured</h2>
     </div>
     <div class="intro-grid">
       <p>
-        My work sits where neural network models, compiler behavior, chip architecture, and production
-        deployment meet. I care about practical systems work that turns into measurable performance:
-        lower latency, smaller memory footprints, better training throughput, and reliable edge deployment.
+        I work where neural network models, compiler behavior, chip architecture, and production deployment meet.
+        The throughline is practical performance: lower latency, smaller memory footprints, better training
+        throughput, and reliable edge deployment.
       </p>
       <dl class="metric-list">
         <div>
@@ -54,83 +55,6 @@ title: Home
           <dd>RTF improvement for end-to-end ASR acceleration.</dd>
         </div>
       </dl>
-    </div>
-  </section>
-
-  <section class="section" id="experience" aria-labelledby="experience-title">
-    <div class="section-heading">
-      <p class="eyebrow">Selected work</p>
-      <h2 id="experience-title">Experience</h2>
-    </div>
-
-    <div class="timeline">
-      {% for item in site.data.experience %}
-      <article class="experience-card">
-        <div class="experience-meta">
-          <span>{{ item.scope }}</span>
-          <span>{{ item.tags }}</span>
-        </div>
-        <h3>{{ item.title }}</h3>
-        <ul>
-          {% for point in item.points %}
-          <li>{{ point }}</li>
-          {% endfor %}
-        </ul>
-      </article>
-      {% endfor %}
-    </div>
-  </section>
-
-  <section class="section credentials" id="education" aria-labelledby="education-title">
-    <div class="section-heading">
-      <p class="eyebrow">Background</p>
-      <h2 id="education-title">Education, Publications, and Skills</h2>
-    </div>
-    <div class="credentials-grid">
-      <section aria-labelledby="education-list-title">
-        <h3 id="education-list-title">Education</h3>
-        <div class="compact-list">
-          {% for item in site.data.education %}
-          <article>
-            <h4>{{ item.school }}</h4>
-            <p>{{ item.degree }}, {{ item.year }} - {{ item.field }}{% if item.extra %}. {{ item.extra }}{% endif %}</p>
-          </article>
-          {% endfor %}
-        </div>
-      </section>
-
-      <section aria-labelledby="skills-title">
-        <h3 id="skills-title">Skills</h3>
-        <div class="skill-cloud">
-          {% for skill in site.data.skills %}
-          <span>{{ skill }}</span>
-          {% endfor %}
-        </div>
-      </section>
-    </div>
-
-    <section class="publications" aria-labelledby="publications-title">
-      <h3 id="publications-title">Publications</h3>
-      <ol>
-        {% for item in site.data.publications %}
-        <li>{{ item.text }}</li>
-        {% endfor %}
-      </ol>
-    </section>
-  </section>
-
-  <section class="section systems" id="systems" aria-labelledby="systems-title">
-    <div class="section-heading">
-      <p class="eyebrow">Focus areas</p>
-      <h2 id="systems-title">Systems I Like to Make Better</h2>
-    </div>
-    <div class="focus-grid">
-      {% for focus in site.data.focus %}
-      <article>
-        <h3>{{ focus.title }}</h3>
-        <p>{{ focus.text }}</p>
-      </article>
-      {% endfor %}
     </div>
   </section>
 
