@@ -1,273 +1,135 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta
-      name="description"
-      content="Personal homepage for Kaiyu Shi, focused on AI systems, distributed training, speech technology, edge inference, and NPU compiler work."
-    />
-    <title>Kaiyu Shi | AI Systems Engineer</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <header class="site-header">
-      <a class="brand" href="#top" aria-label="Kaiyu Shi home">Kaiyu Shi</a>
-      <nav aria-label="Primary navigation">
-        <a href="#writing">Writing</a>
-        <a href="#experience">Experience</a>
-        <a href="#systems">Systems</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </header>
+---
+layout: default
+title: Home
+---
 
-    <main id="top">
-      <section class="hero" aria-labelledby="hero-title">
-        <div class="hero-copy">
-          <p class="eyebrow">AI systems · compilers · speech infrastructure</p>
-          <h1 id="hero-title">Kaiyu Shi</h1>
-          <p class="hero-lede">
-            AI systems engineer building faster, leaner machine learning infrastructure from training
-            to silicon, with work across distributed training, ASR and TTS platforms, edge inference
-            runtimes, quantization, NPU kernels, and chip validation.
-          </p>
-          <div class="hero-actions" aria-label="Page shortcuts">
-            <a class="button primary" href="#experience">View experience</a>
-            <a class="button secondary" href="#systems">Explore focus areas</a>
-          </div>
-        </div>
-        <aside class="profile-panel" aria-label="Profile summary">
-          <img src="assets/avatar.png" width="300" height="300" alt="Portrait of Kaiyu Shi" />
-          <div>
-            <p class="profile-name">石开宇 · Kaiyu Shi</p>
-            <p class="profile-role">AI systems engineer working across model training, inference acceleration, and hardware-aware optimization.</p>
-          </div>
-        </aside>
-      </section>
+<main id="top">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero-copy">
+      <p class="eyebrow">AI systems · compilers · speech infrastructure</p>
+      <h1 id="hero-title">Kaiyu Shi</h1>
+      <p class="hero-lede">
+        {{ site.description }} I work across distributed training, ASR and TTS platforms,
+        edge inference runtimes, quantization, NPU kernels, and chip validation.
+      </p>
+      <div class="hero-actions" aria-label="Page shortcuts">
+        <a class="button primary" href="#writing">Read notes</a>
+        <a class="button secondary" href="#experience">View experience</a>
+      </div>
+    </div>
+    <aside class="profile-panel" aria-label="Profile summary">
+      <img src="{{ site.avatar_url }}" width="240" height="240" alt="GitHub avatar for {{ site.github_username }}" />
+      <div>
+        <p class="profile-name">石开宇 · Kaiyu Shi</p>
+        <p class="profile-role">AI systems engineer focused on practical performance, production reliability, and hardware-aware optimization.</p>
+        <a class="profile-link" href="https://github.com/{{ site.github_username }}" target="_blank" rel="noreferrer">GitHub @{{ site.github_username }}</a>
+      </div>
+    </aside>
+  </section>
 
-      <section class="section intro" aria-labelledby="intro-title">
-        <h2 id="intro-title">Engineering Scope</h2>
-        <div class="intro-grid">
-          <p>
-            My work sits where model quality, system efficiency, compiler behavior, and hardware constraints meet.
-            I care about making large systems measurably better: lower latency, lower memory use, higher training
-            throughput, and smoother production deployment.
-          </p>
-          <dl class="metric-list">
-            <div>
-              <dt>2x</dt>
-              <dd>Training acceleration in a PyTorch-based distributed training upgrade.</dd>
-            </div>
-            <div>
-              <dt>5x</dt>
-              <dd>Memory reduction and NNLM latency improvement in separate system efforts.</dd>
-            </div>
-            <div>
-              <dt>25x</dt>
-              <dd>RTF improvement for end-to-end ASR acceleration.</dd>
-            </div>
-          </dl>
-        </div>
-      </section>
-
-      <section class="section writing" id="writing" aria-labelledby="writing-title">
-        <div class="section-heading">
-          <div>
-            <p class="eyebrow">Blog posts</p>
-            <h2 id="writing-title">PyTorch Source Notes</h2>
-          </div>
-          <a class="repo-link" href="https://github.com/Stonesjtu/pytorch-learning" target="_blank" rel="noreferrer">
-            View repository
-          </a>
-        </div>
-        <div class="posts-grid">
-          <article class="post-card">
-            <p class="post-kicker">Tensor internals</p>
-            <h3>
-              <a href="https://github.com/Stonesjtu/pytorch-learning/blob/master/tensor_add_explained.md" target="_blank" rel="noreferrer">
-                Figure out what b.add_(b) has done
-              </a>
-            </h3>
-            <p>
-              Traces PyTorch tensor addition from Python bindings through ATen, TH tensor macros, BLAS paths,
-              OpenMP splitting, and AVX2 vector kernels.
-            </p>
-          </article>
-
-          <article class="post-card">
-            <p class="post-kicker">Dispatch and autograd</p>
-            <h3>
-              <a href="https://github.com/Stonesjtu/pytorch-learning/blob/master/dispatch.md" target="_blank" rel="noreferrer">
-                How PyTorch dispatches Variable.index_select
-              </a>
-            </h3>
-            <p>
-              Explains how Tensor and Variable calls move through generated bindings, C/C++ backends, CUDA kernels,
-              and derivative definitions.
-            </p>
-          </article>
-
-          <article class="post-card">
-            <p class="post-kicker">Runtime walkthrough</p>
-            <h3>
-              <a href="https://github.com/Stonesjtu/pytorch-learning/blob/master/walkthrough.md" target="_blank" rel="noreferrer">
-                From Python to C/C++: a PyTorch walk-through
-              </a>
-            </h3>
-            <p>
-              Walks through a compact autograd example to show how Variables, Functions, the backward graph,
-              and the imperative engine fit together.
-            </p>
-          </article>
-
-          <article class="post-card">
-            <p class="post-kicker">Distributed build</p>
-            <h3>
-              <a href="https://github.com/Stonesjtu/pytorch-learning/blob/master/build-with-mpi.md" target="_blank" rel="noreferrer">
-                Build PyTorch with CUDA-aware MPI support
-              </a>
-            </h3>
-            <p>
-              Notes on building OpenMPI with CUDA support, compiling PyTorch against MPI compilers, and checking
-              runtime distributed support.
-            </p>
-          </article>
-
-          <article class="post-card">
-            <p class="post-kicker">NCCL</p>
-            <h3>
-              <a href="https://github.com/Stonesjtu/pytorch-learning/blob/master/build_with_nccl.md" target="_blank" rel="noreferrer">
-                Build PyTorch with NCCL2
-              </a>
-            </h3>
-            <p>
-              Covers NCCL2 installation, clean PyTorch source builds, multi-GPU all-reduce tests, and network
-              interface troubleshooting.
-            </p>
-          </article>
-
-          <article class="post-card">
-            <p class="post-kicker">Performance</p>
-            <h3>
-              <a href="https://github.com/Stonesjtu/pytorch-learning/blob/master/profile.md" target="_blank" rel="noreferrer">
-                Trace PyTorch CUDA performance bottlenecks
-              </a>
-            </h3>
-            <p>
-              Shows a profiling workflow from synchronized Python-level cProfile and line-profiler runs down to
-              nvprof and kernel-level investigation.
-            </p>
-          </article>
-        </div>
-      </section>
-
-      <section class="section" id="experience" aria-labelledby="experience-title">
-        <div class="section-heading">
-          <p class="eyebrow">Selected work</p>
-          <h2 id="experience-title">Experience</h2>
-        </div>
-
-        <div class="timeline">
-          <article class="experience-card">
-            <div class="experience-meta">
-              <span>Distributed training and speech systems</span>
-              <span>ASR · TTS · Wakeup · GPU inference</span>
-            </div>
-            <h3>Led a PyTorch-based distributed training platform upgrade</h3>
-            <ul>
-              <li>Moved internal speech training workflows from Kaldi-era tooling to a newer PyTorch stack.</li>
-              <li>Improved training speed by 2x, reduced memory use by 5x, and lowered relative WER by 5% to 10%.</li>
-              <li>Supported CE, CTC, MMI, and LAS training criteria with multi-task, multi-view, and teacher-student recipes.</li>
-              <li>Stabilized training for ASR, TTS, and wakeup models, and accelerated TFServing-based GPU inference.</li>
-              <li>Reduced NNLM latency by 5x and improved end-to-end ASR real-time factor by 25x.</li>
-            </ul>
-          </article>
-
-          <article class="experience-card">
-            <div class="experience-meta">
-              <span>Microsoft Research intern, Seattle</span>
-              <span>Spring 2019</span>
-            </div>
-            <h3>Designed memory-efficient pipeline model-parallel training</h3>
-            <ul>
-              <li>Worked on vertical model splitting and pipeline training for very large models.</li>
-              <li>Reduced communication pressure by shifting pipeline exchange from weights toward activations.</li>
-              <li>Used layered weight stashing to address high memory use in PipeDream-style training.</li>
-              <li>Combined the lower memory footprint of GPipe with PipeDream's bubble-free execution characteristics.</li>
-            </ul>
-          </article>
-
-          <article class="experience-card">
-            <div class="experience-meta">
-              <span>Edge inference and audio AI</span>
-              <span>Runtime · compiler · quantization</span>
-            </div>
-            <h3>Built low-cost chip inference and model compression systems</h3>
-            <ul>
-              <li>Developed a C99-compatible graph inference engine for low-cost edge chips and ASIC accelerators such as NPUs.</li>
-              <li>Built ONNX frontend parsing, graph optimization, backend code generation, and micro-kernel tiling search.</li>
-              <li>Defined NPU operators and specs for GEMM, Conv2D, activation, unified memory, layout, and compiler behavior.</li>
-              <li>Led acoustic model miniaturization for wakeup and recognition workloads under RAM and compute limits.</li>
-              <li>Built quantization-aware training flows for 16-bit, 8-bit, 4-bit, and 1-bit deployment with mixed precision support.</li>
-            </ul>
-          </article>
-
-          <article class="experience-card">
-            <div class="experience-meta">
-              <span>NPU kernel and chip validation</span>
-              <span>Operators · libraries · bring-up</span>
-            </div>
-            <h3>Optimized operators and validated custom NPU silicon</h3>
-            <ul>
-              <li>Translated product network requirements into operator and compiler-stack development plans.</li>
-              <li>Tuned NPU kernels for element-wise operations, NMS, attention, and other performance-critical workloads.</li>
-              <li>Developed high-performance acceleration library primitives comparable to CUB, including scan, reduce, and sort.</li>
-              <li>Worked on operator fusion, automatic compilation, and code generation.</li>
-              <li>Owned operator-side chip bring-up validation, tracked silicon issues, and drove fixes or practical workarounds.</li>
-            </ul>
-          </article>
-        </div>
-      </section>
-
-      <section class="section systems" id="systems" aria-labelledby="systems-title">
-        <div class="section-heading">
-          <p class="eyebrow">Focus areas</p>
-          <h2 id="systems-title">Systems I Like to Make Better</h2>
-        </div>
-        <div class="focus-grid">
-          <article>
-            <h3>Training Infrastructure</h3>
-            <p>Distributed training, model parallelism, speech model criteria, memory planning, and throughput tuning.</p>
-          </article>
-          <article>
-            <h3>Inference Runtime</h3>
-            <p>Graph parsing, operator scheduling, TFServing acceleration, latency reduction, and deployment stability.</p>
-          </article>
-          <article>
-            <h3>Compiler and Kernels</h3>
-            <p>NPU operators, tiling search, data layout, polyhedral dataflow exploration, and hardware-aware cost models.</p>
-          </article>
-          <article>
-            <h3>Edge AI</h3>
-            <p>Low-bit quantization, acoustic model compression, wakeup and recognition workloads, and tight-memory deployment.</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="section contact" id="contact" aria-labelledby="contact-title">
+  <section class="section intro" aria-labelledby="intro-title">
+    <div class="section-heading">
+      <p class="eyebrow">Engineering scope</p>
+      <h2 id="intro-title">Work That Moves Metrics</h2>
+    </div>
+    <div class="intro-grid">
+      <p>
+        My work sits where model quality, system efficiency, compiler behavior, and hardware constraints meet.
+        I care about making large systems measurably better: lower latency, lower memory use, higher training
+        throughput, and smoother production deployment.
+      </p>
+      <dl class="metric-list">
         <div>
-          <p class="eyebrow">Contact</p>
-          <h2 id="contact-title">Let’s build practical AI systems.</h2>
+          <dt>2x</dt>
+          <dd>Training acceleration in a PyTorch-based distributed training upgrade.</dd>
         </div>
-        <p>
-          I am interested in rigorous engineering conversations around AI infrastructure, compiler stacks,
-          hardware-aware optimization, and production model performance.
-        </p>
-      </section>
-    </main>
+        <div>
+          <dt>5x</dt>
+          <dd>Memory reduction and NNLM latency improvement in separate system efforts.</dd>
+        </div>
+        <div>
+          <dt>25x</dt>
+          <dd>RTF improvement for end-to-end ASR acceleration.</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
 
-    <footer>
-      <p>© <span id="year">2026</span> Kaiyu Shi. Built for GitHub Pages.</p>
-    </footer>
-  </body>
-</html>
+  <section class="section writing" id="writing" aria-labelledby="writing-title">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">Blog posts</p>
+        <h2 id="writing-title">PyTorch Source Notes</h2>
+      </div>
+      <a class="repo-link" href="https://github.com/{{ site.github_username }}/pytorch-learning" target="_blank" rel="noreferrer">
+        View repository
+      </a>
+    </div>
+    <div class="posts-list">
+      {% for post in site.data.posts %}
+      <article class="post-row">
+        <div class="post-meta">
+          <span>{% if forloop.index < 10 %}0{% endif %}{{ forloop.index }}</span>
+          <p>{{ post.topic }}</p>
+        </div>
+        <div class="post-copy">
+          <h3>
+            <a href="{{ post.url }}" target="_blank" rel="noreferrer">{{ post.title }}</a>
+          </h3>
+          <p>{{ post.summary }}</p>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="section" id="experience" aria-labelledby="experience-title">
+    <div class="section-heading">
+      <p class="eyebrow">Selected work</p>
+      <h2 id="experience-title">Experience</h2>
+    </div>
+
+    <div class="timeline">
+      {% for item in site.data.experience %}
+      <article class="experience-card">
+        <div class="experience-meta">
+          <span>{{ item.scope }}</span>
+          <span>{{ item.tags }}</span>
+        </div>
+        <h3>{{ item.title }}</h3>
+        <ul>
+          {% for point in item.points %}
+          <li>{{ point }}</li>
+          {% endfor %}
+        </ul>
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="section systems" id="systems" aria-labelledby="systems-title">
+    <div class="section-heading">
+      <p class="eyebrow">Focus areas</p>
+      <h2 id="systems-title">Systems I Like to Make Better</h2>
+    </div>
+    <div class="focus-grid">
+      {% for focus in site.data.focus %}
+      <article>
+        <h3>{{ focus.title }}</h3>
+        <p>{{ focus.text }}</p>
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="section contact" id="contact" aria-labelledby="contact-title">
+    <div>
+      <p class="eyebrow">Contact</p>
+      <h2 id="contact-title">Let’s build practical AI systems.</h2>
+    </div>
+    <p>
+      I am interested in rigorous engineering conversations around AI infrastructure, compiler stacks,
+      hardware-aware optimization, and production model performance.
+    </p>
+  </section>
+</main>

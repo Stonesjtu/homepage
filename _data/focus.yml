@@ -1,0 +1,8 @@
+- title: Training Infrastructure
+  text: Distributed training, model parallelism, speech model criteria, memory planning, and throughput tuning.
+- title: Inference Runtime
+  text: Graph parsing, operator scheduling, TFServing acceleration, latency reduction, and deployment stability.
+- title: Compiler and Kernels
+  text: NPU operators, tiling search, data layout, polyhedral dataflow exploration, and hardware-aware cost models.
+- title: Edge AI
+  text: Low-bit quantization, acoustic model compression, wakeup and recognition workloads, and tight-memory deployment.
