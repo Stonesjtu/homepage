@@ -5,6 +5,14 @@ baseurl: "/homepage"
 github_username: Stonesjtu
 avatar_url: "https://avatars.githubusercontent.com/u/4556044?v=4"
 
+comments:
+  enabled: true
+  provider: giscus
+  repo: "Stonesjtu/homepage"
+  repo_id: "R_kgDOS_7EwA"
+  category: "General"
+  category_id: "DIC_kwDOS_7EwM4C_hcJ"
+
 markdown: kramdown
 permalink: pretty
 
