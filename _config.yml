@@ -1,9 +1,10 @@
 title: Kaiyu Shi
-description: AI systems engineer building faster, leaner machine learning infrastructure from training to silicon.
+description: Intelligent speech algorithm engineer and AI compiler systems engineer working across NPU compilers, speech chips, distributed training, and efficient inference.
 url: "https://stonesjtu.github.io"
 baseurl: "/homepage"
 github_username: Stonesjtu
 avatar_url: "https://avatars.githubusercontent.com/u/4556044?v=4"
+email: "skyisno.1@gmail.com"
 
 comments:
   enabled: true

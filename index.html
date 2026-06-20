@@ -6,22 +6,24 @@ title: Home
 <main id="top">
   <section class="hero" aria-labelledby="hero-title">
     <div class="hero-copy">
-      <p class="eyebrow">AI systems · compilers · speech infrastructure</p>
+      <p class="eyebrow">Intelligent speech · AI compilers · NPU systems</p>
       <h1 id="hero-title">Kaiyu Shi</h1>
       <p class="hero-lede">
-        {{ site.description }} I work across distributed training, ASR and TTS platforms,
-        edge inference runtimes, quantization, NPU kernels, and chip validation.
+        {{ site.description }} My recent work spans NIO's AI compiler system,
+        AISpeech edge speech chips, PyTorch distributed training, and memory-efficient
+        model-parallel DNN training.
       </p>
       <div class="hero-actions" aria-label="Page shortcuts">
-        <a class="button primary" href="#writing">Read notes</a>
-        <a class="button secondary" href="#experience">View experience</a>
+        <a class="button primary" href="#experience">View experience</a>
+        <a class="button secondary" href="#education">Education and publications</a>
       </div>
     </div>
     <aside class="profile-panel" aria-label="Profile summary">
       <img src="{{ site.avatar_url }}" width="240" height="240" alt="GitHub avatar for {{ site.github_username }}" />
       <div>
         <p class="profile-name">石开宇 · Kaiyu Shi</p>
-        <p class="profile-role">AI systems engineer focused on practical performance, production reliability, and hardware-aware optimization.</p>
+        <p class="profile-role">AI Compiler System Staff Engineer at NIO. Previously speech chip algorithm engineer at AISpeech and intern at Microsoft Research.</p>
+        <a class="profile-link" href="mailto:{{ site.email }}">{{ site.email }}</a>
         <a class="profile-link" href="https://github.com/{{ site.github_username }}" target="_blank" rel="noreferrer">GitHub @{{ site.github_username }}</a>
       </div>
     </aside>
@@ -34,9 +36,9 @@ title: Home
     </div>
     <div class="intro-grid">
       <p>
-        My work sits where model quality, system efficiency, compiler behavior, and hardware constraints meet.
-        I care about making large systems measurably better: lower latency, lower memory use, higher training
-        throughput, and smoother production deployment.
+        My work sits where neural network models, compiler behavior, chip architecture, and production
+        deployment meet. I care about practical systems work that turns into measurable performance:
+        lower latency, smaller memory footprints, better training throughput, and reliable edge deployment.
       </p>
       <dl class="metric-list">
         <div>
@@ -52,6 +54,83 @@ title: Home
           <dd>RTF improvement for end-to-end ASR acceleration.</dd>
         </div>
       </dl>
+    </div>
+  </section>
+
+  <section class="section" id="experience" aria-labelledby="experience-title">
+    <div class="section-heading">
+      <p class="eyebrow">Selected work</p>
+      <h2 id="experience-title">Experience</h2>
+    </div>
+
+    <div class="timeline">
+      {% for item in site.data.experience %}
+      <article class="experience-card">
+        <div class="experience-meta">
+          <span>{{ item.scope }}</span>
+          <span>{{ item.tags }}</span>
+        </div>
+        <h3>{{ item.title }}</h3>
+        <ul>
+          {% for point in item.points %}
+          <li>{{ point }}</li>
+          {% endfor %}
+        </ul>
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="section credentials" id="education" aria-labelledby="education-title">
+    <div class="section-heading">
+      <p class="eyebrow">Background</p>
+      <h2 id="education-title">Education, Publications, and Skills</h2>
+    </div>
+    <div class="credentials-grid">
+      <section aria-labelledby="education-list-title">
+        <h3 id="education-list-title">Education</h3>
+        <div class="compact-list">
+          {% for item in site.data.education %}
+          <article>
+            <h4>{{ item.school }}</h4>
+            <p>{{ item.degree }}, {{ item.year }} - {{ item.field }}{% if item.extra %}. {{ item.extra }}{% endif %}</p>
+          </article>
+          {% endfor %}
+        </div>
+      </section>
+
+      <section aria-labelledby="skills-title">
+        <h3 id="skills-title">Skills</h3>
+        <div class="skill-cloud">
+          {% for skill in site.data.skills %}
+          <span>{{ skill }}</span>
+          {% endfor %}
+        </div>
+      </section>
+    </div>
+
+    <section class="publications" aria-labelledby="publications-title">
+      <h3 id="publications-title">Publications</h3>
+      <ol>
+        {% for item in site.data.publications %}
+        <li>{{ item.text }}</li>
+        {% endfor %}
+      </ol>
+    </section>
+  </section>
+
+  <section class="section systems" id="systems" aria-labelledby="systems-title">
+    <div class="section-heading">
+      <p class="eyebrow">Focus areas</p>
+      <h2 id="systems-title">Systems I Like to Make Better</h2>
+    </div>
+    <div class="focus-grid">
+      {% for focus in site.data.focus %}
+      <article>
+        <h3>{{ focus.title }}</h3>
+        <p>{{ focus.text }}</p>
+      </article>
+      {% endfor %}
     </div>
   </section>
 
@@ -84,53 +163,16 @@ title: Home
     </div>
   </section>
 
-  <section class="section" id="experience" aria-labelledby="experience-title">
-    <div class="section-heading">
-      <p class="eyebrow">Selected work</p>
-      <h2 id="experience-title">Experience</h2>
-    </div>
-
-    <div class="timeline">
-      {% for item in site.data.experience %}
-      <article class="experience-card">
-        <div class="experience-meta">
-          <span>{{ item.scope }}</span>
-          <span>{{ item.tags }}</span>
-        </div>
-        <h3>{{ item.title }}</h3>
-        <ul>
-          {% for point in item.points %}
-          <li>{{ point }}</li>
-          {% endfor %}
-        </ul>
-      </article>
-      {% endfor %}
-    </div>
-  </section>
-
-  <section class="section systems" id="systems" aria-labelledby="systems-title">
-    <div class="section-heading">
-      <p class="eyebrow">Focus areas</p>
-      <h2 id="systems-title">Systems I Like to Make Better</h2>
-    </div>
-    <div class="focus-grid">
-      {% for focus in site.data.focus %}
-      <article>
-        <h3>{{ focus.title }}</h3>
-        <p>{{ focus.text }}</p>
-      </article>
-      {% endfor %}
-    </div>
-  </section>
-
   <section class="section contact" id="contact" aria-labelledby="contact-title">
     <div>
       <p class="eyebrow">Contact</p>
       <h2 id="contact-title">Let’s build practical AI systems.</h2>
     </div>
     <p>
-      I am interested in rigorous engineering conversations around AI infrastructure, compiler stacks,
-      hardware-aware optimization, and production model performance.
+      Reach me at <a href="mailto:{{ site.email }}">{{ site.email }}</a> or on
+      <a href="https://github.com/{{ site.github_username }}" target="_blank" rel="noreferrer">GitHub</a>
+      for conversations around AI infrastructure, compiler stacks, hardware-aware optimization,
+      and production model performance.
     </p>
   </section>
 </main>

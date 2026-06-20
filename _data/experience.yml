@@ -1,35 +1,46 @@
-- scope: Distributed training and speech systems
-  tags: ASR · TTS · Wakeup · GPU inference
-  title: Led a PyTorch-based distributed training platform upgrade
+- scope: NIO, Shanghai
+  tags: AI Compiler System - Staff Engineer · Apr 2023-Present
+  title: Lead AI compiler and NPU operator work for in-house DSA hardware
   points:
-    - Moved internal speech training workflows from Kaldi-era tooling to a newer PyTorch stack.
+    - Analyze product neural networks and translate model requirements into operator and compiler-stack development plans.
+    - Identify performance hotspots and define optimization opportunities across operators, code generation, and compiler behavior.
+    - Develop and tune high-performance NPU operators including element-wise, NMS, and attention kernels.
+    - Build acceleration-library primitives comparable to CUB, including scan, reduce, and sort.
+    - Work on operator fusion, automatic compilation, code generation, and chip bring-up validation.
+- scope: AISpeech, Shanghai
+  tags: Speech Chip Algorithm Engineer · 2020-Apr 2023
+  title: Built edge speech-chip inference, compiler, quantization, and signal-processing systems
+  points:
+    - Developed a C99-compatible graph inference engine for low-cost edge chips and ASIC accelerators such as NPUs.
+    - Built ONNX frontend parsing, graph optimization, backend code generation, and micro-kernel tiling search.
+    - Defined NPU operators and specs for GEMM, Conv2D, activation, unified memory, layout, RNN support, memory planning, and hardware consistency validation.
+    - Worked on polyhedral dataflow and schedule search, hardware behavior cost modeling, and feature-layout modeling in Interstellar.
+    - Led acoustic model miniaturization for wakeup and recognition workloads under RAM and compute constraints.
+    - Built single-channel keyword speech enhancement and streaming multi-channel MVDR beamforming based on tfmask.
+    - Led QAT tooling for 16-bit, 8-bit, 4-bit, and 1-bit quantization with flexible mixed precision, deployed across multiple edge businesses.
+- scope: AISpeech, Suzhou
+  tags: Algorithm Engineer · 2019-2020
+  title: Led PyTorch distributed training and GPU inference acceleration for speech models
+  points:
+    - Led development and rollout of a new PyTorch-based distributed training toolchain, upgrading internal speech workflows from Kaldi.
     - Improved training speed by 2x, reduced memory use by 5x, and lowered relative WER by 5% to 10%.
     - Supported CE, CTC, MMI, and LAS training criteria with multi-task, multi-view, and teacher-student recipes.
-    - Stabilized training for ASR, TTS, and wakeup models, and accelerated TFServing-based GPU inference.
-    - Reduced NNLM latency by 5x and improved end-to-end ASR real-time factor by 25x.
-- scope: Microsoft Research intern, Seattle
-  tags: Spring 2019
-  title: Designed memory-efficient pipeline model-parallel training
+    - Stabilized training for ASR, TTS, and wakeup models across internal business use cases.
+    - Accelerated TFServing-based GPU inference, reducing NNLM latency by 5x and improving end-to-end ASR RTF by 25x.
+    - Optimized CPU-GPU heterogeneous operators and increased concurrency by 2.5x.
+- scope: Microsoft Research, Seattle
+  tags: Intern · Spring 2019
+  title: Researched memory-efficient pipeline model-parallel DNN training
   points:
     - Worked on vertical model splitting and pipeline training for very large models.
     - Reduced communication pressure by shifting pipeline exchange from weights toward activations.
     - Used layered weight stashing to address high memory use in PipeDream-style training.
     - Combined the lower memory footprint of GPipe with PipeDream's bubble-free execution characteristics.
-- scope: Edge inference and audio AI
-  tags: Runtime · compiler · quantization
-  title: Built low-cost chip inference and model compression systems
+- scope: AISpeech, Suzhou
+  tags: Algorithm Intern · 2018-2019
+  title: Built distributed training for large-scale neural network language models
   points:
-    - Developed a C99-compatible graph inference engine for low-cost edge chips and ASIC accelerators such as NPUs.
-    - Built ONNX frontend parsing, graph optimization, backend code generation, and micro-kernel tiling search.
-    - Defined NPU operators and specs for GEMM, Conv2D, activation, unified memory, layout, and compiler behavior.
-    - Led acoustic model miniaturization for wakeup and recognition workloads under RAM and compute limits.
-    - Built quantization-aware training flows for 16-bit, 8-bit, 4-bit, and 1-bit deployment with mixed precision support.
-- scope: NPU kernel and chip validation
-  tags: Operators · libraries · bring-up
-  title: Optimized operators and validated custom NPU silicon
-  points:
-    - Translated product network requirements into operator and compiler-stack development plans.
-    - Tuned NPU kernels for element-wise operations, NMS, attention, and other performance-critical workloads.
-    - Developed high-performance acceleration library primitives comparable to CUB, including scan, reduce, and sort.
-    - Worked on operator fusion, automatic compilation, and code generation.
-    - Owned operator-side chip bring-up validation, tracked silicon issues, and drove fixes or practical workarounds.
+    - Developed a PyTorch-based distributed training system for large neural network language models.
+    - Used Block Momentum to reduce distributed communication overhead.
+    - Applied NCE training to accelerate very-large-vocabulary language model training.
+    - Trained on 80 GB of text data in three days.
