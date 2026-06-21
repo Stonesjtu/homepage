@@ -1,16 +1,17 @@
 ---
 layout: default
-title: Experience
+title: Experience and Background
 permalink: /experience/
 ---
 
 <main class="subpage" id="top">
   <section class="page-hero" aria-labelledby="experience-title">
     <p class="eyebrow">Selected work</p>
-    <h1 id="experience-title">Experience</h1>
+    <h1 id="experience-title">Experience and Background</h1>
     <p>
-      A resume-style view of my work across AI compiler systems, speech chips,
-      distributed training, GPU inference, and model-parallel training research.
+      A focused view of my work, education, publications, and technical skills across
+      AI compiler systems, speech chips, distributed training, GPU inference, and
+      model-parallel training research.
     </p>
   </section>
 
@@ -30,6 +31,62 @@ permalink: /experience/
         </ul>
       </article>
       {% endfor %}
+    </div>
+  </section>
+
+  <section class="section credentials" id="background" aria-labelledby="background-title">
+    <div class="section-heading">
+      <p class="eyebrow">Education</p>
+      <h2 id="background-title">Shanghai Jiao Tong University</h2>
+    </div>
+    <div class="compact-list">
+      {% for item in site.data.education %}
+      <article>
+        <h3>{{ item.school }}</h3>
+        <p>{{ item.degree }}, {{ item.year }} - {{ item.field }}{% if item.extra %}. {{ item.extra }}{% endif %}</p>
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="section systems" id="systems" aria-labelledby="systems-title">
+    <div class="section-heading">
+      <p class="eyebrow">Focus areas</p>
+      <h2 id="systems-title">Systems I Like to Make Better</h2>
+    </div>
+    <div class="focus-grid">
+      {% for focus in site.data.focus %}
+      <article>
+        <h3>{{ focus.title }}</h3>
+        <p>{{ focus.text }}</p>
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="section credentials" aria-labelledby="skills-title">
+    <div class="section-heading">
+      <p class="eyebrow">Toolbox</p>
+      <h2 id="skills-title">Skills</h2>
+    </div>
+    <div class="skill-cloud">
+      {% for skill in site.data.skills %}
+      <span>{{ skill }}</span>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="section credentials" aria-labelledby="publications-title">
+    <div class="section-heading">
+      <p class="eyebrow">Research</p>
+      <h2 id="publications-title">Publications</h2>
+    </div>
+    <div class="publications no-top-rule">
+      <ol>
+        {% for item in site.data.publications %}
+        <li>{{ item.text }}</li>
+        {% endfor %}
+      </ol>
     </div>
   </section>
 </main>
