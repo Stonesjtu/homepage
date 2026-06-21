@@ -1,10 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Kaiyu Shi favicon">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="石 favicon">
   <rect width="64" height="64" rx="14" fill="#116656"/>
-  <path d="M17 14v36" stroke="#fbfaf6" stroke-width="7" stroke-linecap="round"/>
-  <path d="M45 15 23 32l23 17" fill="none" stroke="#fbfaf6" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M43 14h8v8m0 20v8h-8M13 14H9v8m0 20v8h4" fill="none" stroke="#ad7b1b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-  <circle cx="51" cy="14" r="3" fill="#ad7b1b"/>
-  <circle cx="51" cy="50" r="3" fill="#ad7b1b"/>
-  <circle cx="9" cy="14" r="3" fill="#ad7b1b"/>
-  <circle cx="9" cy="50" r="3" fill="#ad7b1b"/>
+  <path d="M49 13h5v5M10 46v5h5M49 51h5v-5" fill="none" stroke="#ad7b1b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M47 16h6M13 49H9m39 2h6" stroke="#ad7b1b" stroke-width="3" stroke-linecap="round"/>
+  <text
+    x="32"
+    y="43"
+    text-anchor="middle"
+    font-family="STHeiti, 'PingFang SC', 'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif"
+    font-size="39"
+    font-weight="800"
+    fill="#fbfaf6">石</text>
 </svg>
