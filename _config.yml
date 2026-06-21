@@ -17,7 +17,7 @@ comments:
 analytics:
   enabled: true
   provider: goatcounter
-  goatcounter_code: "stonesjtu-homepage"
+  goatcounter_code: "stonesjtu"
 
 visitor_counter:
   enabled: true
