@@ -1,0 +1,85 @@
+---
+layout: default
+title: About
+permalink: /about/
+---
+
+<main class="subpage" id="top">
+  <section class="page-hero about-hero" aria-labelledby="about-title">
+    <div>
+      <p class="eyebrow">About</p>
+      <h1 id="about-title">Everyone Should Enjoy AI</h1>
+      <p>
+        I am an AI infrastructure and compiler systems engineer. My current work is on
+        ByteDance's Doubao mobile assistant team, where I build serving, inference, and
+        training infrastructure across mobile-side and cloud-side paths.
+      </p>
+    </div>
+    <aside class="profile-panel" aria-label="Profile summary">
+      <img src="{{ site.avatar_url }}" width="240" height="240" alt="GitHub avatar for {{ site.github_username }}" />
+      <div>
+        <p class="profile-name">石开宇 · Kaiyu Shi</p>
+        <p class="profile-role">AI Infrastructure Engineer on ByteDance's Doubao mobile assistant team. Previously AI compiler system engineer at NIO, speech chip algorithm engineer at AISpeech, and intern at Microsoft Research.</p>
+        <a class="profile-link" href="mailto:{{ site.email }}">{{ site.email }}</a>
+        <a class="profile-link" href="https://github.com/{{ site.github_username }}" target="_blank" rel="noreferrer">GitHub @{{ site.github_username }}</a>
+      </div>
+    </aside>
+  </section>
+
+  <section class="section intro" aria-labelledby="mission-title">
+    <div class="section-heading">
+      <p class="eyebrow">Career objective</p>
+      <h2 id="mission-title">{{ site.career_objective }}</h2>
+    </div>
+    <div class="intro-grid">
+      <p>
+        {{ site.critical_action }} I care about the infrastructure layer because it decides
+        whether capable models can become reliable, affordable, and widely usable products.
+        The work spans large-model serving, inference optimization, training infrastructure,
+        compiler behavior, chip architecture, and production deployment.
+      </p>
+      <dl class="metric-list">
+        <div>
+          <dt>LLM/VLM</dt>
+          <dd>Cloud inference deployment and optimization for Doubao mobile assistant.</dd>
+        </div>
+        <div>
+          <dt>910B</dt>
+          <dd>Training-stack integration work with VeOmni and verl on Ascend 910B.</dd>
+        </div>
+        <div>
+          <dt>25x</dt>
+          <dd>RTF improvement from earlier end-to-end ASR acceleration work.</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="section systems" aria-labelledby="focus-title">
+    <div class="section-heading">
+      <p class="eyebrow">Focus areas</p>
+      <h2 id="focus-title">Systems I Like to Make Better</h2>
+    </div>
+    <div class="focus-grid">
+      {% for focus in site.data.focus %}
+      <article>
+        <h3>{{ focus.title }}</h3>
+        <p>{{ focus.text }}</p>
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="section contact" id="contact" aria-labelledby="contact-title">
+    <div>
+      <p class="eyebrow">Contact</p>
+      <h2 id="contact-title">Let’s make AI open, practical, and enjoyable.</h2>
+    </div>
+    <p>
+      Reach me at <a href="mailto:{{ site.email }}">{{ site.email }}</a> or on
+      <a href="https://github.com/{{ site.github_username }}" target="_blank" rel="noreferrer">GitHub</a>
+      for conversations around AI infrastructure, model serving, inference optimization,
+      compiler stacks, hardware-aware optimization, and production model performance.
+    </p>
+  </section>
+</main>

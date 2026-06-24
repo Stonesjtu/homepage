@@ -3,7 +3,7 @@ description: AI infrastructure and compiler systems engineer building open, prac
 career_objective: "Everyone should enjoy AI."
 critical_action: "AI should be open, and infra is the key."
 url: "https://stonesjtu.github.io"
-baseurl: "/homepage"
+baseurl: ""
 github_username: Stonesjtu
 avatar_url: "https://avatars.githubusercontent.com/u/4556044?v=4"
 email: "skyisno.1@gmail.com"
@@ -11,7 +11,7 @@ email: "skyisno.1@gmail.com"
 comments:
   enabled: true
   provider: giscus
-  repo: "Stonesjtu/homepage"
+  repo: "Stonesjtu/Stonesjtu.github.io"
   repo_id: "R_kgDOS_7EwA"
   category: "General"
   category_id: "DIC_kwDOS_7EwM4C_hcJ"
@@ -23,7 +23,7 @@ analytics:
 
 visitor_counter:
   enabled: true
-  url: "stonesjtu.github.io/homepage"
+  url: "stonesjtu.github.io"
 
 markdown: kramdown
 permalink: pretty
