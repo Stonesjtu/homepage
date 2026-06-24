@@ -10,21 +10,40 @@
     <link rel="stylesheet" href="{{ '/styles.css' | relative_url }}" />
   </head>
   <body>
-    <header class="site-header">
-      <a class="brand" href="{{ '/' | relative_url }}" aria-label="{{ site.title }} home">{{ site.title }}</a>
-      <nav aria-label="Primary navigation">
-        <a href="{{ '/#writing' | relative_url }}">Writing</a>
-        <a href="{{ '/about/' | relative_url }}">About</a>
-        <a href="{{ '/experience/' | relative_url }}">Experience &amp; Background</a>
-      </nav>
-    </header>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Site profile and navigation">
+        <a class="avatar-link" href="{{ '/' | relative_url }}" aria-label="{{ site.title }} home">
+          <img src="{{ site.avatar_url }}" width="112" height="112" alt="GitHub avatar for {{ site.github_username }}" />
+        </a>
+        <a class="site-title" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+        <p class="site-tagline">{{ site.description }}</p>
+        <nav class="site-nav" aria-label="Primary navigation">
+          <a href="{{ '/' | relative_url }}">Home</a>
+          <a href="{{ '/#writing' | relative_url }}">Blog</a>
+          <a href="{{ '/about/' | relative_url }}">About</a>
+          <a href="{{ '/experience/' | relative_url }}">Experience</a>
+        </nav>
+        <div class="sidebar-links" aria-label="Profile links">
+          <a href="https://github.com/{{ site.github_username }}" target="_blank" rel="noreferrer">GitHub</a>
+          <a href="mailto:{{ site.email }}">Email</a>
+        </div>
+      </aside>
 
-    {{ content }}
+      <div class="content-shell">
+        <header class="topbar">
+          <a href="{{ '/' | relative_url }}">Home</a>
+          <span>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</span>
+        </header>
 
-    <footer>
-      <p>© 2026 {{ site.title }}. Built with Jekyll for GitHub Pages.</p>
-      {% include visitor-counter.html %}
-    </footer>
+        {{ content }}
+
+        <footer class="site-footer">
+          <p>© 2026 <a href="https://github.com/{{ site.github_username }}" target="_blank" rel="noreferrer">{{ site.title }}</a>. Some rights reserved.</p>
+          <p>Using a Chirpy-inspired Jekyll layout.</p>
+          {% include visitor-counter.html %}
+        </footer>
+      </div>
+    </div>
     {% include analytics.html %}
   </body>
 </html>
